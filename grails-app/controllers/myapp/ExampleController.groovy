@@ -1,5 +1,6 @@
 package myapp
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.web.controllers.ControllerMethod
 import org.springframework.messaging.handler.annotation.MessageExceptionHandler
 import org.springframework.messaging.handler.annotation.MessageMapping
@@ -9,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize
 
 class ExampleController {
 
+	@Secured("hasRole('USER')")
 	def index() {}
 
 	@ControllerMethod
